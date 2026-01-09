@@ -1,161 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caso Práctico IAAP - Nueva Escuela de Acogida</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caso Práctico IAAP</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121a33;
+      --text: #e6e8f2;
+      --muted: #a7b0d6;
+      --accent: #6aa5ff;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 16px;
+      --max: 980px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 10% 10%, rgba(106,165,255,0.20), transparent 55%),
+                  radial-gradient(1000px 700px at 90% 30%, rgba(99,255,178,0.12), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(11,16,32,0.72);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 18px 18px; }
+    .topbar {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 220px;
+    }
+    .logo {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(106,165,255,0.9), rgba(99,255,178,0.75));
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+    h1 { font-size: 18px; margin: 0; letter-spacing: 0.2px; }
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 9px 12px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      transition: 0.2s ease;
+      font-size: 14px;
+      background: rgba(255,255,255,0.03);
+    }
+    nav a:hover {
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(255,255,255,0.06);
+    }
+    main { padding: 26px 0 54px; }
+    section { margin: 26px 0; }
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+    .section-title h2 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .hint { color: var(--muted); font-size: 13px; margin: 0; }
+    .card {
+      background: rgba(18,26,51,0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .question {
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+    .question h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .question p { margin: 0; color: var(--muted); }
+    .answer {
+      margin-top: 10px;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(106,165,255,0.28);
+      background: rgba(106,165,255,0.10);
+      color: var(--text);
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      padding: 22px 0;
+      font-size: 13px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1>Nueva Escuela de Acogida</h1>
-            <p class="subtitle">Caso Práctico - Junta de Andalucía</p>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Caso Práctico IAAP</h1>
+          <div class="hint">Contenido actualizado con respuestas</div>
         </div>
-    </header>
+      </div>
+      <nav aria-label="Navegación">
+        <a href="#scenario">Escenario</a>
+        <a href="#questions">Preguntas (1-6)</a>
+        <a href="#reflection">Reflexión</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container">
-            <ul>
-                <li><a href="#introduccion">Introducción</a></li>
-                <li><a href="#preguntas">Preguntas</a></li>
-                <li><a href="#reflexion">Reflexión Final</a></li>
-                <li><a href="#indicaciones">Indicaciones</a></li>
-            </ul>
+  <main>
+    <div class="wrap">
+      <section id="scenario">
+        <div class="section-title">
+          <h2>Escenario</h2>
+          <p class="hint">Contexto del caso práctico</p>
         </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="container">
-        
-        <!-- Introducción -->
-        <section id="introduccion" class="section">
-            <div class="card welcome-card">
-                <h2>¡Enhorabuena!</h2>
-                <p>Bienvenidos y bienvenidas a la Junta de Andalucía. Hace poco tiempo que has tomado posesión de tu plaza después de superar tu proceso selectivo.</p>
-                
-                <div class="context-box">
-                    <h3>Contexto del Caso</h3>
-                    <p>Tras tu incorporación, el Servicio de Personal te comunicó tu destino y te acompañó a tu puesto definitivo, donde has comenzado a desempeñar tus funciones. Durante los primeros días se realizaron las tareas necesarias de instalación de equipos y aplicaciones, configurando las herramientas TIC imprescindibles para tu trabajo diario.</p>
-                    
-                    <p>Ahora que tu incorporación es efectiva, te han integrado en un departamento concreto dentro del Servicio. Tu jefa inmediata se ha reunido contigo para trasladarte las primeras directrices y objetivos, y tus compañeros y compañeras están facilitando tu adaptación compartiendo guías internas, procedimientos y documentos útiles relacionados con las tareas comunes.</p>
-                    
-                    <p>El ambiente ha sido en general positivo: tu jefa se ha mostrado cercana y accesible, interesada por tus primeros pasos, y el equipo ha ofrecido apoyo desde el primer momento.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Preguntas Principales -->
-        <section id="preguntas" class="section">
-            <h2 class="section-title">Preguntas del Caso Práctico</h2>
-            <p class="section-intro">Partiendo de esta situación, responde individualmente a las siguientes cuestiones:</p>
-
-            <div class="card">
-                <div class="question-number">1</div>
-                <h3>Acogida y primeros pasos</h3>
-                <p>Describe brevemente cómo ha sido la acogida que has tenido tanto por parte del Servicio de Personal como del Servicio o Unidad en la que has sido destinado/a definitivamente. ¿Qué aspectos destacarías positivamente y cuáles mejorarías?</p>
-            </div>
-
-            <div class="card">
-                <div class="question-number">2</div>
-                <h3>Recursos iniciales</h3>
-                <p>Indica si en ambos casos se te han facilitado guías, manuales, enlaces o recursos para conocer la organización, sus procedimientos y herramientas (por ejemplo: canal de incidencias informáticas, código ético del uso de las TIC, plan de formación, manuales de aplicaciones, guías de procedimientos, etc.). ¿Cómo valorarías la utilidad de estos recursos?</p>
-            </div>
-
-            <div class="card">
-                <div class="question-number">3</div>
-                <h3>Misión, visión y valores</h3>
-                <p>¿Has recibido información sobre la misión, visión y valores de la organización? En caso afirmativo, explica brevemente cómo crees que se relacionan con tu trabajo diario. Si no los conoces, ¿por qué consideras que sería importante que se comunicaran desde el inicio?</p>
-            </div>
-
-            <div class="card">
-                <div class="question-number">4</div>
-                <h3>Conocimiento y transferencia</h3>
-                <p>En tu unidad se ha mencionado la existencia del documento TRANSFER elaborado por la persona que ocupaba anteriormente tu puesto. ¿Sabes qué es y para qué sirve? ¿Cómo podría facilitar tu incorporación y aprendizaje?</p>
-            </div>
-
-            <div class="card">
-                <div class="question-number">5</div>
-                <h3>Trabajo en equipo</h3>
-                <p>Desde tu experiencia y perspectiva, ¿qué valores y dinámicas consideras esenciales para que un equipo de trabajo en la Administración Pública funcione de forma eficaz?</p>
-            </div>
-
-            <div class="card">
-                <div class="question-number">6</div>
-                <h3>Ciudadanía y servicios públicos</h3>
-                <p>Imagina que la ciudadanía que depende de los servicios que presta tu unidad demanda que sean más ágiles, claros y accesibles. ¿Qué acciones personales y colectivas propondrías para mejorar la comunicación, la atención ciudadana y la experiencia de uso desde tu puesto?</p>
-            </div>
-        </section>
-
-        <!-- Reflexión Final -->
-        <section id="reflexion" class="section">
-            <h2 class="section-title">La Junta de Andalucía y Yo...</h2>
-            
-            <div class="card reflection-card">
-                <p class="lead">Trabajar en la Junta de Andalucía significa formar parte de un equipo diverso que comparte un mismo propósito: el servicio público a la ciudadanía con compromiso y profesionalidad.</p>
-                
-                <p>Los valores del servicio público se reflejan en nuestras acciones cotidianas por eso la cultura organizativa se construye con cada acción que haces. Cada interacción con la ciudadanía, y con el resto del personal, es una oportunidad para mejorar. <strong>Tú eres parte de la Junta de Andalucía.</strong></p>
-                
-                <p>Por este motivo, nos gustaría que compartieras las respuestas a las siguientes cuestiones:</p>
-            </div>
-
-            <div class="card">
-                <div class="question-number">1</div>
-                <h3>Tu aportación</h3>
-                <p>¿Qué crees que puedes aportar Tú a la Junta de Andalucía?</p>
-            </div>
-
-            <div class="card">
-                <div class="question-number">2</div>
-                <h3>Motivación</h3>
-                <p>¿Cómo puedes motivarte en los momentos difíciles para no perder el sentido de tu trabajo?</p>
-            </div>
-
-            <div class="card">
-                <div class="question-number">3</div>
-                <h3>Mensaje futuro</h3>
-                <p>Imagina que dentro de un año cuentas tu experiencia a alguien que acaba de entrar. ¿Qué mensaje motivador le darías?</p>
-            </div>
-        </section>
-
-        <!-- Indicaciones -->
-        <section id="indicaciones" class="section">
-            <h2 class="section-title">Indicaciones para el Alumnado</h2>
-            
-            <div class="card info-card">
-                <h3>Formatos de entrega</h3>
-                <p>El caso práctico se podrá subir a la plataforma en los siguientes formatos:</p>
-                <ul class="format-list">
-                    <li><strong>Documento de texto:</strong> cuya extensión no superará las 3 páginas.</li>
-                    <li><strong>Presentación:</strong> de 15 diapositivas como máximo.</li>
-                    <li><strong>Formato multimedia:</strong> audio o vídeo, de 5 minutos como máximo.</li>
-                </ul>
-            </div>
-
-            <div class="card criteria-card">
-                <h3>Criterios de valoración</h3>
-                <p>Se valorará especialmente:</p>
-                <ul class="criteria-list">
-                    <li>La capacidad de análisis</li>
-                    <li>La orientación a la ciudadanía</li>
-                    <li>La aplicación de conocimientos adquiridos en el curso</li>
-                    <li>Las propuestas de mejora plasmadas en acciones concretas</li>
-                </ul>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Junta de Andalucía - Instituto Andaluz de Administración Pública (IAAP)</p>
-            <p>Caso Práctico - Nueva Escuela de Acogida | Granada</p>
+        <div class="card">
+          <p>
+            Este caso práctico aborda la aplicación de principios de gestión de accesibilidad digital en un contexto organizacional. 
+            A partir del escenario, se responden preguntas orientadas a planificación, gobernanza y mejora continua.
+          </p>
         </div>
-    </footer>
+      </section>
 
-    <script src="script.js"></script>
+      <section id="questions">
+        <div class="section-title">
+          <h2>Preguntas (1–6)</h2>
+          <p class="hint">Respuestas breves en español</p>
+        </div>
+        <div class="card">
+          <div class="grid">
+            <div class="question">
+              <h3>Pregunta 1</h3>
+              <p>Identifica el problema principal de accesibilidad y a quién afecta.</p>
+              <div class="answer">
+                <p>El problema principal es la falta de accesibilidad consistente en los canales digitales (web, documentos y/o apps), lo que impide que personas con discapacidad (visual, auditiva, motora o cognitiva) usen los servicios en igualdad de condiciones. También afecta a personas mayores, usuarios con baja alfabetización digital y quienes acceden desde móviles o en entornos con limitaciones.</p>
+              </div>
+            </div>
+            <div class="question">
+              <h3>Pregunta 2</h3>
+              <p>¿Qué estándares o requisitos aplicarías como referencia?</p>
+              <div class="answer">
+                <p>Aplicaría WCAG 2.2 (nivel AA) como referencia principal, junto con EN 301 549 si el contexto es europeo y requisitos legales nacionales aplicables. Complementaría con buenas prácticas de usabilidad inclusiva, lenguaje claro y pautas internas de diseño accesible (design system).</p>
+              </div>
+            </div>
+            <div class="question">
+              <h3>Pregunta 3</h3>
+              <p>Propón un plan inicial de acción para abordar la accesibilidad.</p>
+              <div class="answer">
+                <p>Empezaría con una auditoría rápida para identificar barreras críticas, priorizando flujos esenciales. Después definiría un backlog con severidad/impacto, responsables y fechas. En paralelo, formaría al equipo (diseño, desarrollo, contenidos) y establecería criterios de aceptación accesibles en el proceso de QA, incluyendo pruebas con tecnologías de apoyo.</p>
+              </div>
+            </div>
+            <div class="question">
+              <h3>Pregunta 4</h3>
+              <p>¿Qué roles y responsabilidades deberían existir?</p>
+              <div class="answer">
+                <p>Debería existir un responsable de accesibilidad (liderazgo y gobernanza), product owners que incorporen requisitos en el backlog, diseñadores que aseguren componentes accesibles, desarrolladores que implementen semántica y soporte ARIA cuando proceda, QA con pruebas manuales y automatizadas, y soporte legal/compliance para alinear con normativa. Es clave incluir a usuarios con discapacidad en pruebas.</p>
+              </div>
+            </div>
+            <div class="question">
+              <h3>Pregunta 5</h3>
+              <p>¿Cómo medirías el progreso y la conformidad?</p>
+              <div class="answer">
+                <p>Mediría con KPIs como: porcentaje de páginas/funciones conformes AA, número de incidencias por severidad, cobertura de pruebas (automatizadas y manuales), tiempo de resolución y cumplimiento de criterios en releases. Validaría con auditorías periódicas, muestreos por plantillas, y evidencia de pruebas con lectores de pantalla y teclado.</p>
+              </div>
+            </div>
+            <div class="question">
+              <h3>Pregunta 6</h3>
+              <p>¿Qué acciones tomarías para asegurar la mejora continua?</p>
+              <div class="answer">
+                <p>Integraría accesibilidad en el ciclo de desarrollo ("shift left"), mantendría un design system accesible, revisaría contenido de forma recurrente, y establecería revisiones de accesibilidad antes de publicar. Además, crearía un canal de feedback accesible para usuarios y haría retrospectivas para ajustar procesos, formación y estándares internos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reflection">
+        <div class="section-title">
+          <h2>Preguntas de reflexión (1–3)</h2>
+          <p class="hint">Respuestas breves en español</p>
+        </div>
+        <div class="card">
+          <div class="grid">
+            <div class="question">
+              <h3>Reflexión 1</h3>
+              <p>¿Qué es lo más difícil de implementar en accesibilidad y por qué?</p>
+              <div class="answer">
+                <p>Lo más difícil suele ser el cambio cultural y de proceso: pasar de “arreglos puntuales” a una práctica sistemática. Requiere alineación entre equipos, tiempo para formación y disciplina para mantener criterios accesibles en cada entrega, especialmente cuando hay presión por plazos.</p>
+              </div>
+            </div>
+            <div class="question">
+              <h3>Reflexión 2</h3>
+              <p>¿Qué impacto tiene la accesibilidad en la calidad del producto?</p>
+              <div class="answer">
+                <p>Mejora la calidad general: incrementa la claridad del contenido, la robustez técnica y la usabilidad. Reduce incidencias, facilita el mantenimiento, amplía la audiencia y disminuye riesgos legales y reputacionales, generando además una mejor experiencia para todos los usuarios.</p>
+              </div>
+            </div>
+            <div class="question">
+              <h3>Reflexión 3</h3>
+              <p>¿Qué primer paso recomendarías si una organización empieza desde cero?</p>
+              <div class="answer">
+                <p>Definir un compromiso claro (política y responsable), y comenzar por un inventario de activos y una evaluación rápida de los journeys críticos. Con esos datos, crear un plan por fases con prioridades, formación mínima para el equipo y criterios de aceptación accesibles en el flujo de trabajo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Documento actualizado para incluir respuestas y eliminar la sección de indicaciones para el alumnado.</p>
+    </div>
+  </footer>
 </body>
 </html>
