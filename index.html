@@ -1,192 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Caso práctico IAAP</title>
-  <style>
-    :root{
-      --bg:#0b1020; --card:#111a33; --text:#e7ecff; --muted:#b9c3ff;
-      --accent:#5cc8ff; --accent2:#8a7dff; --border:rgba(255,255,255,.12);
-      --shadow:0 18px 40px rgba(0,0,0,.35);
-      --radius:16px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 700px at 20% 0%, rgba(92,200,255,.22), transparent 55%),radial-gradient(900px 600px at 80% 10%, rgba(138,125,255,.18), transparent 55%), var(--bg);color:var(--text)}
-    a{color:inherit}
-    .wrap{max-width:1040px;margin:0 auto;padding:32px 20px 80px}
-    header{display:flex;gap:18px;align-items:center;justify-content:space-between;margin-bottom:24px}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}
-    h1{font-size:26px;margin:0;letter-spacing:.2px}
-    .sub{margin:4px 0 0;color:var(--muted);font-size:14px}
-    nav{display:flex;gap:10px;flex-wrap:wrap}
-    nav a{padding:9px 12px;border:1px solid var(--border);border-radius:999px;text-decoration:none;color:var(--text);background:rgba(255,255,255,.03);transition:.2s}
-    nav a:hover{transform:translateY(-1px);border-color:rgba(92,200,255,.5)}
-
-    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
-
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .card .inner{padding:20px}
-    .card h2{margin:0 0 10px;font-size:18px}
-    .card p{margin:10px 0;color:rgba(231,236,255,.92);line-height:1.55}
-    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .pill{font-size:12px;color:var(--muted);border:1px solid var(--border);padding:6px 10px;border-radius:999px;background:rgba(0,0,0,.12)}
-
-    section{scroll-margin-top:90px}
-    .section{margin-top:18px}
-
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media (max-width:700px){.two{grid-template-columns:1fr}}
-    ul{margin:10px 0 0 18px;color:rgba(231,236,255,.92);line-height:1.55}
-    code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,monospace}
-    footer{margin-top:34px;color:rgba(185,195,255,.85);font-size:13px}
-    .small{font-size:13px;color:rgba(185,195,255,.92)}
-    .cta{display:inline-flex;gap:10px;align-items:center;margin-top:10px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#081027;text-decoration:none;font-weight:700;border:0}
-    .btn.secondary{background:rgba(255,255,255,.06);color:var(--text);border:1px solid var(--border);font-weight:600}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso Práctico IAAP - Nueva Escuela de Acogida</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>Caso práctico IAAP</h1>
-          <div class="sub">Página de referencia para el caso práctico</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Nueva Escuela de Acogida</h1>
+            <p class="subtitle">Caso Práctico - Junta de Andalucía</p>
         </div>
-      </div>
-      <nav aria-label="Navegación">
-        <a href="#objetivo">Objetivo</a>
-        <a href="#entregables">Entregables</a>
-        <a href="#rubrica">Rúbrica</a>
-        <a href="#recursos">Recursos</a>
-      </nav>
     </header>
 
-    <div class="grid">
-      <div class="card">
-        <div class="inner">
-          <h2 id="objetivo">Objetivo</h2>
-          <p>
-            Desarrollar una solución completa utilizando Azure (y, cuando aplique, Azure OpenAI) que cubra:
-            ingesta de datos, almacenamiento, procesamiento/analítica, exposición mediante API y un componente
-            de IA generativa o de búsqueda semántica.
-          </p>
-          <div class="meta">
-            <span class="pill">Azure</span>
-            <span class="pill">IA generativa</span>
-            <span class="pill">Arquitectura</span>
-            <span class="pill">Buenas prácticas</span>
-          </div>
-          <div class="cta">
-            <a class="btn" href="#entregables">Ver entregables</a>
-            <a class="btn secondary" href="#rubrica">Ver rúbrica</a>
-          </div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#preguntas">Preguntas</a></li>
+                <li><a href="#reflexion">Reflexión Final</a></li>
+                <li><a href="#indicaciones">Indicaciones</a></li>
+            </ul>
         </div>
-      </div>
+    </nav>
 
-      <div class="card">
-        <div class="inner">
-          <h2>Resumen</h2>
-          <p class="small">
-            Esta página sintetiza requisitos y criterios de evaluación. Usa la navegación superior para
-            saltar entre secciones.
-          </p>
-          <div class="two section">
-            <div>
-              <h2 style="margin-top:0">Puntos clave</h2>
-              <ul>
-                <li>Arquitectura justificable y trazable a requisitos.</li>
-                <li>Automatización reproducible (IaC / CI/CD cuando aplique).</li>
-                <li>Observabilidad, seguridad y control de costos.</li>
-              </ul>
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Introducción -->
+        <section id="introduccion" class="section">
+            <div class="card welcome-card">
+                <h2>¡Enhorabuena!</h2>
+                <p>Bienvenidos y bienvenidas a la Junta de Andalucía. Hace poco tiempo que has tomado posesión de tu plaza después de superar tu proceso selectivo.</p>
+                
+                <div class="context-box">
+                    <h3>Contexto del Caso</h3>
+                    <p>Tras tu incorporación, el Servicio de Personal te comunicó tu destino y te acompañó a tu puesto definitivo, donde has comenzado a desempeñar tus funciones. Durante los primeros días se realizaron las tareas necesarias de instalación de equipos y aplicaciones, configurando las herramientas TIC imprescindibles para tu trabajo diario.</p>
+                    
+                    <p>Ahora que tu incorporación es efectiva, te han integrado en un departamento concreto dentro del Servicio. Tu jefa inmediata se ha reunido contigo para trasladarte las primeras directrices y objetivos, y tus compañeros y compañeras están facilitando tu adaptación compartiendo guías internas, procedimientos y documentos útiles relacionados con las tareas comunes.</p>
+                    
+                    <p>El ambiente ha sido en general positivo: tu jefa se ha mostrado cercana y accesible, interesada por tus primeros pasos, y el equipo ha ofrecido apoyo desde el primer momento.</p>
+                </div>
             </div>
-            <div>
-              <h2 style="margin-top:0">Formato</h2>
-              <ul>
-                <li>Repositorio con código y documentación.</li>
-                <li>Diagrama(s) y decisiones de diseño.</li>
-                <li>Instrucciones de despliegue/ejecución.</li>
-              </ul>
+        </section>
+
+        <!-- Preguntas Principales -->
+        <section id="preguntas" class="section">
+            <h2 class="section-title">Preguntas del Caso Práctico</h2>
+            <p class="section-intro">Partiendo de esta situación, responde individualmente a las siguientes cuestiones:</p>
+
+            <div class="card">
+                <div class="question-number">1</div>
+                <h3>Acogida y primeros pasos</h3>
+                <p>Describe brevemente cómo ha sido la acogida que has tenido tanto por parte del Servicio de Personal como del Servicio o Unidad en la que has sido destinado/a definitivamente. ¿Qué aspectos destacarías positivamente y cuáles mejorarías?</p>
             </div>
-          </div>
+
+            <div class="card">
+                <div class="question-number">2</div>
+                <h3>Recursos iniciales</h3>
+                <p>Indica si en ambos casos se te han facilitado guías, manuales, enlaces o recursos para conocer la organización, sus procedimientos y herramientas (por ejemplo: canal de incidencias informáticas, código ético del uso de las TIC, plan de formación, manuales de aplicaciones, guías de procedimientos, etc.). ¿Cómo valorarías la utilidad de estos recursos?</p>
+            </div>
+
+            <div class="card">
+                <div class="question-number">3</div>
+                <h3>Misión, visión y valores</h3>
+                <p>¿Has recibido información sobre la misión, visión y valores de la organización? En caso afirmativo, explica brevemente cómo crees que se relacionan con tu trabajo diario. Si no los conoces, ¿por qué consideras que sería importante que se comunicaran desde el inicio?</p>
+            </div>
+
+            <div class="card">
+                <div class="question-number">4</div>
+                <h3>Conocimiento y transferencia</h3>
+                <p>En tu unidad se ha mencionado la existencia del documento TRANSFER elaborado por la persona que ocupaba anteriormente tu puesto. ¿Sabes qué es y para qué sirve? ¿Cómo podría facilitar tu incorporación y aprendizaje?</p>
+            </div>
+
+            <div class="card">
+                <div class="question-number">5</div>
+                <h3>Trabajo en equipo</h3>
+                <p>Desde tu experiencia y perspectiva, ¿qué valores y dinámicas consideras esenciales para que un equipo de trabajo en la Administración Pública funcione de forma eficaz?</p>
+            </div>
+
+            <div class="card">
+                <div class="question-number">6</div>
+                <h3>Ciudadanía y servicios públicos</h3>
+                <p>Imagina que la ciudadanía que depende de los servicios que presta tu unidad demanda que sean más ágiles, claros y accesibles. ¿Qué acciones personales y colectivas propondrías para mejorar la comunicación, la atención ciudadana y la experiencia de uso desde tu puesto?</p>
+            </div>
+        </section>
+
+        <!-- Reflexión Final -->
+        <section id="reflexion" class="section">
+            <h2 class="section-title">La Junta de Andalucía y Yo...</h2>
+            
+            <div class="card reflection-card">
+                <p class="lead">Trabajar en la Junta de Andalucía significa formar parte de un equipo diverso que comparte un mismo propósito: el servicio público a la ciudadanía con compromiso y profesionalidad.</p>
+                
+                <p>Los valores del servicio público se reflejan en nuestras acciones cotidianas por eso la cultura organizativa se construye con cada acción que haces. Cada interacción con la ciudadanía, y con el resto del personal, es una oportunidad para mejorar. <strong>Tú eres parte de la Junta de Andalucía.</strong></p>
+                
+                <p>Por este motivo, nos gustaría que compartieras las respuestas a las siguientes cuestiones:</p>
+            </div>
+
+            <div class="card">
+                <div class="question-number">1</div>
+                <h3>Tu aportación</h3>
+                <p>¿Qué crees que puedes aportar Tú a la Junta de Andalucía?</p>
+            </div>
+
+            <div class="card">
+                <div class="question-number">2</div>
+                <h3>Motivación</h3>
+                <p>¿Cómo puedes motivarte en los momentos difíciles para no perder el sentido de tu trabajo?</p>
+            </div>
+
+            <div class="card">
+                <div class="question-number">3</div>
+                <h3>Mensaje futuro</h3>
+                <p>Imagina que dentro de un año cuentas tu experiencia a alguien que acaba de entrar. ¿Qué mensaje motivador le darías?</p>
+            </div>
+        </section>
+
+        <!-- Indicaciones -->
+        <section id="indicaciones" class="section">
+            <h2 class="section-title">Indicaciones para el Alumnado</h2>
+            
+            <div class="card info-card">
+                <h3>Formatos de entrega</h3>
+                <p>El caso práctico se podrá subir a la plataforma en los siguientes formatos:</p>
+                <ul class="format-list">
+                    <li><strong>Documento de texto:</strong> cuya extensión no superará las 3 páginas.</li>
+                    <li><strong>Presentación:</strong> de 15 diapositivas como máximo.</li>
+                    <li><strong>Formato multimedia:</strong> audio o vídeo, de 5 minutos como máximo.</li>
+                </ul>
+            </div>
+
+            <div class="card criteria-card">
+                <h3>Criterios de valoración</h3>
+                <p>Se valorará especialmente:</p>
+                <ul class="criteria-list">
+                    <li>La capacidad de análisis</li>
+                    <li>La orientación a la ciudadanía</li>
+                    <li>La aplicación de conocimientos adquiridos en el curso</li>
+                    <li>Las propuestas de mejora plasmadas en acciones concretas</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Junta de Andalucía - Instituto Andaluz de Administración Pública (IAAP)</p>
+            <p>Caso Práctico - Nueva Escuela de Acogida | Granada</p>
         </div>
-      </div>
-    </div>
-
-    <section id="entregables" class="section">
-      <div class="card"><div class="inner">
-        <h2>Entregables</h2>
-        <ul>
-          <li>Documento/README con descripción del problema y alcance.</li>
-          <li>Diagrama de arquitectura (por ejemplo, C4 o similar).</li>
-          <li>Código fuente (APIs, pipelines, notebooks, etc.).</li>
-          <li>Guía de despliegue y ejecución (paso a paso).</li>
-          <li>Explicación de decisiones: servicios, seguridad, costos y trade-offs.</li>
-          <li>Pruebas (unitarias/integración) cuando apliquen.</li>
-        </ul>
-      </div></div>
-    </section>
-
-    <section id="rubrica" class="section">
-      <div class="card"><div class="inner">
-        <h2>Rúbrica (criterios de evaluación)</h2>
-        <div class="two">
-          <div>
-            <h2 style="margin-top:0;font-size:16px">Arquitectura &amp; diseño</h2>
-            <ul>
-              <li>Selección adecuada de servicios y desacoplo.</li>
-              <li>Seguridad por diseño (identidad, red, secretos).</li>
-              <li>Escalabilidad, resiliencia y observabilidad.</li>
-            </ul>
-          </div>
-          <div>
-            <h2 style="margin-top:0;font-size:16px">Implementación</h2>
-            <ul>
-              <li>Calidad de código y estructura del repo.</li>
-              <li>Automatización (IaC/CI/CD) y reproducibilidad.</li>
-              <li>Pruebas, documentación y facilidad de uso.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="two section">
-          <div>
-            <h2 style="margin-top:0;font-size:16px">IA / búsqueda</h2>
-            <ul>
-              <li>Uso responsable de IA y mitigación de riesgos.</li>
-              <li>Evaluación (métricas/validación) de la solución.</li>
-              <li>Calidad del grounding/citaciones (si aplica).</li>
-            </ul>
-          </div>
-          <div>
-            <h2 style="margin-top:0;font-size:16px">Operación</h2>
-            <ul>
-              <li>Costos, límites y gobernanza.</li>
-              <li>Logs, métricas, alertas y trazas.</li>
-              <li>Monitoreo y runbooks básicos.</li>
-            </ul>
-          </div>
-        </div>
-      </div></div>
-    </section>
-
-    <section id="recursos" class="section">
-      <div class="card"><div class="inner">
-        <h2>Recursos</h2>
-        <ul>
-          <li>Plantillas de arquitectura (C4, Azure Architecture Center).</li>
-          <li>Guías de Well-Architected Framework.</li>
-          <li>Buenas prácticas de seguridad (Zero Trust).</li>
-        </ul>
-      </div></div>
-    </section>
-
-    <footer>
-      <div>Actualiza esta página según evolucione el caso práctico.</div>
     </footer>
-  </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
