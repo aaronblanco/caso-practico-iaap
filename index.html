@@ -1,168 +1,192 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caso Práctico IAAP</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Caso práctico IAAP</title>
+  <style>
+    :root{
+      --bg:#0b1020; --card:#111a33; --text:#e7ecff; --muted:#b9c3ff;
+      --accent:#5cc8ff; --accent2:#8a7dff; --border:rgba(255,255,255,.12);
+      --shadow:0 18px 40px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 700px at 20% 0%, rgba(92,200,255,.22), transparent 55%),radial-gradient(900px 600px at 80% 10%, rgba(138,125,255,.18), transparent 55%), var(--bg);color:var(--text)}
+    a{color:inherit}
+    .wrap{max-width:1040px;margin:0 auto;padding:32px 20px 80px}
+    header{display:flex;gap:18px;align-items:center;justify-content:space-between;margin-bottom:24px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--shadow)}
+    h1{font-size:26px;margin:0;letter-spacing:.2px}
+    .sub{margin:4px 0 0;color:var(--muted);font-size:14px}
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    nav a{padding:9px 12px;border:1px solid var(--border);border-radius:999px;text-decoration:none;color:var(--text);background:rgba(255,255,255,.03);transition:.2s}
+    nav a:hover{transform:translateY(-1px);border-color:rgba(92,200,255,.5)}
+
+    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card .inner{padding:20px}
+    .card h2{margin:0 0 10px;font-size:18px}
+    .card p{margin:10px 0;color:rgba(231,236,255,.92);line-height:1.55}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .pill{font-size:12px;color:var(--muted);border:1px solid var(--border);padding:6px 10px;border-radius:999px;background:rgba(0,0,0,.12)}
+
+    section{scroll-margin-top:90px}
+    .section{margin-top:18px}
+
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:700px){.two{grid-template-columns:1fr}}
+    ul{margin:10px 0 0 18px;color:rgba(231,236,255,.92);line-height:1.55}
+    code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,monospace}
+    footer{margin-top:34px;color:rgba(185,195,255,.85);font-size:13px}
+    .small{font-size:13px;color:rgba(185,195,255,.92)}
+    .cta{display:inline-flex;gap:10px;align-items:center;margin-top:10px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#081027;text-decoration:none;font-weight:700;border:0}
+    .btn.secondary{background:rgba(255,255,255,.06);color:var(--text);border:1px solid var(--border);font-weight:600}
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Caso Práctico IAAP</h1>
-      <p>Respuestas breves a las preguntas planteadas.</p>
-    </div>
-  </header>
-
-  <nav>
-    <div class="container">
-      <ul>
-        <li><a href="#caso1">Caso 1</a></li>
-        <li><a href="#caso2">Caso 2</a></li>
-        <li><a href="#caso3">Caso 3</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <main>
-    <section id="caso1" class="section">
-      <div class="container">
-        <h2>Caso 1</h2>
-
-        <div class="cards">
-          <article class="card">
-            <h3>1. Identifique los datos personales recogidos, generados y tratados</h3>
-            <p class="answer">
-              Se recopilan datos identificativos (nombre, apellidos, DNI/NIE/pasaporte), datos de contacto (dirección, email, teléfono),
-              datos de la reserva/estancia (fechas, número de acompañantes, preferencias), datos de pago/facturación (sin almacenar PAN completo si se usa pasarela),
-              y datos generados por el servicio (historial de estancias, consumos, incidencias y comunicaciones con el cliente).
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>2. ¿Qué tipo de datos personales son? ¿Alguna categoría especial?</h3>
-            <p class="answer">
-              Principalmente datos de identificación y contacto, y datos transaccionales/contractuales. En general no son categorías especiales,
-              salvo que se traten datos sensibles por petición del cliente (p. ej., necesidades de accesibilidad o salud, alergias) que podrían encajar
-              como datos de salud si se documentan.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>3. ¿Qué finalidades se describen o se pueden inferir?</h3>
-            <p class="answer">
-              Gestión de reservas y prestación del servicio hotelero; cumplimiento de obligaciones legales (registro de viajeros, facturación);
-              atención al cliente y gestión de incidencias; seguridad y prevención de fraude; y, si existe consentimiento o base válida,
-              comunicaciones comerciales/fidelización.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>4. Identifique la base jurídica para cada finalidad</h3>
-            <p class="answer">
-              Contrato: gestionar reserva/estancia y atención vinculada. Obligación legal: registro de viajeros, obligaciones fiscales/contables.
-              Interés legítimo: seguridad, defensa ante reclamaciones, prevención de fraude (con evaluación de ponderación).
-              Consentimiento: marketing no esencial, newsletter, perfilado no necesario.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>5. Identifique cesiones o accesos por terceros (encargados) y transferencias</h3>
-            <p class="answer">
-              Encargados típicos: PMS/Channel manager, motor de reservas, pasarela de pago, proveedor de email/SMS, soporte TI/hosting.
-              Cesiones: autoridades (p. ej., fuerzas y cuerpos de seguridad por registro de viajeros), entidades bancarias.
-              Transferencias internacionales: si proveedores cloud están fuera del EEE; se requerirían SCC u otra garantía.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>6. Plazos de conservación</h3>
-            <p class="answer">
-              Datos contractuales y facturación: según normativa fiscal/contable (habitualmente 4–6 años). Registro de viajeros: según normativa aplicable.
-              Datos de marketing: hasta retirada del consentimiento u oposición. Logs/incidencias: lo estrictamente necesario para seguridad y defensa de reclamaciones.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>7. Medidas de seguridad recomendables</h3>
-            <p class="answer">
-              Control de accesos por perfiles, MFA, cifrado en tránsito y en reposo, minimización y seudonimización cuando proceda,
-              registro de accesos, copias de seguridad y plan de recuperación, acuerdos con encargados, y procedimientos de notificación de brechas.
-            </p>
-          </article>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Caso práctico IAAP</h1>
+          <div class="sub">Página de referencia para el caso práctico</div>
         </div>
       </div>
-    </section>
+      <nav aria-label="Navegación">
+        <a href="#objetivo">Objetivo</a>
+        <a href="#entregables">Entregables</a>
+        <a href="#rubrica">Rúbrica</a>
+        <a href="#recursos">Recursos</a>
+      </nav>
+    </header>
 
-    <section id="caso2" class="section">
-      <div class="container">
-        <h2>Caso 2</h2>
-
-        <div class="cards">
-          <article class="card">
-            <h3>1. ¿Qué riesgos para los derechos y libertades identifica?</h3>
-            <p class="answer">
-              Riesgos de acceso no autorizado a historiales, perfiles o decisiones automatizadas; discriminación o sesgos; falta de transparencia;
-              uso secundario incompatible; suplantación/robo de identidad si hay brecha; y exclusión/impacto significativo por decisiones automatizadas.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>2. ¿Qué medidas de mitigación aplicaría?</h3>
-            <p class="answer">
-              DPIA si procede, minimización de datos, explicabilidad y revisión humana, pruebas de sesgo y calidad, controles de acceso, auditoría,
-              gobernanza de proveedores, y mecanismos sencillos para ejercer derechos (acceso, oposición, limitación, etc.).
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>3. ¿Qué obligaciones de información/transparencia son clave?</h3>
-            <p class="answer">
-              Informar de finalidades, base jurídica, destinatarios, conservación, derechos y, si hay decisiones automatizadas, lógica general,
-              importancia y consecuencias previstas, así como el derecho a intervención humana.
-            </p>
-          </article>
+    <div class="grid">
+      <div class="card">
+        <div class="inner">
+          <h2 id="objetivo">Objetivo</h2>
+          <p>
+            Desarrollar una solución completa utilizando Azure (y, cuando aplique, Azure OpenAI) que cubra:
+            ingesta de datos, almacenamiento, procesamiento/analítica, exposición mediante API y un componente
+            de IA generativa o de búsqueda semántica.
+          </p>
+          <div class="meta">
+            <span class="pill">Azure</span>
+            <span class="pill">IA generativa</span>
+            <span class="pill">Arquitectura</span>
+            <span class="pill">Buenas prácticas</span>
+          </div>
+          <div class="cta">
+            <a class="btn" href="#entregables">Ver entregables</a>
+            <a class="btn secondary" href="#rubrica">Ver rúbrica</a>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section id="caso3" class="section">
-      <div class="container">
-        <h2>Caso 3</h2>
-
-        <div class="cards">
-          <article class="card">
-            <h3>1. ¿Qué haría ante una brecha de seguridad?</h3>
-            <p class="answer">
-              Contener y evaluar el incidente, registrar evidencias, determinar alcance y riesgos, y notificar a la AEPD en 72 horas si aplica.
-              Si el riesgo es alto, comunicar a los afectados sin dilación, y ejecutar acciones correctivas.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>2. ¿Qué documentación debe conservarse?</h3>
-            <p class="answer">
-              Registro interno de la brecha: hechos, efectos, categorías y volumen de datos, medidas adoptadas y decisiones de notificación.
-              También comunicaciones con encargados, evidencias técnicas y lecciones aprendidas.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>3. ¿Qué mejoras preventivas aplicaría?</h3>
-            <p class="answer">
-              Hardening y parchado, segmentación, monitorización y alertas, formación, simulacros, revisión de permisos,
-              pruebas de restauración de backups y evaluación periódica de riesgos.
-            </p>
-          </article>
+      <div class="card">
+        <div class="inner">
+          <h2>Resumen</h2>
+          <p class="small">
+            Esta página sintetiza requisitos y criterios de evaluación. Usa la navegación superior para
+            saltar entre secciones.
+          </p>
+          <div class="two section">
+            <div>
+              <h2 style="margin-top:0">Puntos clave</h2>
+              <ul>
+                <li>Arquitectura justificable y trazable a requisitos.</li>
+                <li>Automatización reproducible (IaC / CI/CD cuando aplique).</li>
+                <li>Observabilidad, seguridad y control de costos.</li>
+              </ul>
+            </div>
+            <div>
+              <h2 style="margin-top:0">Formato</h2>
+              <ul>
+                <li>Repositorio con código y documentación.</li>
+                <li>Diagrama(s) y decisiones de diseño.</li>
+                <li>Instrucciones de despliegue/ejecución.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Caso Práctico IAAP</p>
     </div>
-  </footer>
+
+    <section id="entregables" class="section">
+      <div class="card"><div class="inner">
+        <h2>Entregables</h2>
+        <ul>
+          <li>Documento/README con descripción del problema y alcance.</li>
+          <li>Diagrama de arquitectura (por ejemplo, C4 o similar).</li>
+          <li>Código fuente (APIs, pipelines, notebooks, etc.).</li>
+          <li>Guía de despliegue y ejecución (paso a paso).</li>
+          <li>Explicación de decisiones: servicios, seguridad, costos y trade-offs.</li>
+          <li>Pruebas (unitarias/integración) cuando apliquen.</li>
+        </ul>
+      </div></div>
+    </section>
+
+    <section id="rubrica" class="section">
+      <div class="card"><div class="inner">
+        <h2>Rúbrica (criterios de evaluación)</h2>
+        <div class="two">
+          <div>
+            <h2 style="margin-top:0;font-size:16px">Arquitectura &amp; diseño</h2>
+            <ul>
+              <li>Selección adecuada de servicios y desacoplo.</li>
+              <li>Seguridad por diseño (identidad, red, secretos).</li>
+              <li>Escalabilidad, resiliencia y observabilidad.</li>
+            </ul>
+          </div>
+          <div>
+            <h2 style="margin-top:0;font-size:16px">Implementación</h2>
+            <ul>
+              <li>Calidad de código y estructura del repo.</li>
+              <li>Automatización (IaC/CI/CD) y reproducibilidad.</li>
+              <li>Pruebas, documentación y facilidad de uso.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="two section">
+          <div>
+            <h2 style="margin-top:0;font-size:16px">IA / búsqueda</h2>
+            <ul>
+              <li>Uso responsable de IA y mitigación de riesgos.</li>
+              <li>Evaluación (métricas/validación) de la solución.</li>
+              <li>Calidad del grounding/citaciones (si aplica).</li>
+            </ul>
+          </div>
+          <div>
+            <h2 style="margin-top:0;font-size:16px">Operación</h2>
+            <ul>
+              <li>Costos, límites y gobernanza.</li>
+              <li>Logs, métricas, alertas y trazas.</li>
+              <li>Monitoreo y runbooks básicos.</li>
+            </ul>
+          </div>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="recursos" class="section">
+      <div class="card"><div class="inner">
+        <h2>Recursos</h2>
+        <ul>
+          <li>Plantillas de arquitectura (C4, Azure Architecture Center).</li>
+          <li>Guías de Well-Architected Framework.</li>
+          <li>Buenas prácticas de seguridad (Zero Trust).</li>
+        </ul>
+      </div></div>
+    </section>
+
+    <footer>
+      <div>Actualiza esta página según evolucione el caso práctico.</div>
+    </footer>
+  </div>
 </body>
 </html>
