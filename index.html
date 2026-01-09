@@ -4,254 +4,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Caso Práctico IAAP</title>
-  <style>
-    :root {
-      --bg: #0b1020;
-      --card: #121a33;
-      --text: #e6e8f2;
-      --muted: #a7b0d6;
-      --accent: #6aa5ff;
-      --border: rgba(255,255,255,0.10);
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
-      --radius: 16px;
-      --max: 980px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
-      background: radial-gradient(1200px 800px at 10% 10%, rgba(106,165,255,0.20), transparent 55%),
-                  radial-gradient(1000px 700px at 90% 30%, rgba(99,255,178,0.12), transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(11,16,32,0.72);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 18px 18px; }
-    .topbar {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 220px;
-    }
-    .logo {
-      width: 40px; height: 40px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(106,165,255,0.9), rgba(99,255,178,0.75));
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
-    h1 { font-size: 18px; margin: 0; letter-spacing: 0.2px; }
-    nav {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      padding: 9px 12px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      transition: 0.2s ease;
-      font-size: 14px;
-      background: rgba(255,255,255,0.03);
-    }
-    nav a:hover {
-      color: var(--text);
-      border-color: var(--border);
-      background: rgba(255,255,255,0.06);
-    }
-    main { padding: 26px 0 54px; }
-    section { margin: 26px 0; }
-    .section-title {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 12px;
-    }
-    .section-title h2 {
-      font-size: 20px;
-      margin: 0;
-    }
-    .hint { color: var(--muted); font-size: 13px; margin: 0; }
-    .card {
-      background: rgba(18,26,51,0.92);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    .question {
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-    }
-    .question h3 {
-      margin: 0 0 6px;
-      font-size: 16px;
-    }
-    .question p { margin: 0; color: var(--muted); }
-    .answer {
-      margin-top: 10px;
-      padding: 12px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(106,165,255,0.28);
-      background: rgba(106,165,255,0.10);
-      color: var(--text);
-    }
-    footer {
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      padding: 22px 0;
-      font-size: 13px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <div class="wrap topbar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>Caso Práctico IAAP</h1>
-          <div class="hint">Contenido actualizado con respuestas</div>
-        </div>
-      </div>
-      <nav aria-label="Navegación">
-        <a href="#scenario">Escenario</a>
-        <a href="#questions">Preguntas (1-6)</a>
-        <a href="#reflection">Reflexión</a>
-      </nav>
+    <div class="container">
+      <h1>Caso Práctico IAAP</h1>
+      <p>Respuestas breves a las preguntas planteadas.</p>
     </div>
   </header>
 
-  <main>
-    <div class="wrap">
-      <section id="scenario">
-        <div class="section-title">
-          <h2>Escenario</h2>
-          <p class="hint">Contexto del caso práctico</p>
-        </div>
-        <div class="card">
-          <p>
-            Este caso práctico aborda la aplicación de principios de gestión de accesibilidad digital en un contexto organizacional. 
-            A partir del escenario, se responden preguntas orientadas a planificación, gobernanza y mejora continua.
-          </p>
-        </div>
-      </section>
-
-      <section id="questions">
-        <div class="section-title">
-          <h2>Preguntas (1–6)</h2>
-          <p class="hint">Respuestas breves en español</p>
-        </div>
-        <div class="card">
-          <div class="grid">
-            <div class="question">
-              <h3>Pregunta 1</h3>
-              <p>Identifica el problema principal de accesibilidad y a quién afecta.</p>
-              <div class="answer">
-                <p>El problema principal es la falta de accesibilidad consistente en los canales digitales (web, documentos y/o apps), lo que impide que personas con discapacidad (visual, auditiva, motora o cognitiva) usen los servicios en igualdad de condiciones. También afecta a personas mayores, usuarios con baja alfabetización digital y quienes acceden desde móviles o en entornos con limitaciones.</p>
-              </div>
-            </div>
-            <div class="question">
-              <h3>Pregunta 2</h3>
-              <p>¿Qué estándares o requisitos aplicarías como referencia?</p>
-              <div class="answer">
-                <p>Aplicaría WCAG 2.2 (nivel AA) como referencia principal, junto con EN 301 549 si el contexto es europeo y requisitos legales nacionales aplicables. Complementaría con buenas prácticas de usabilidad inclusiva, lenguaje claro y pautas internas de diseño accesible (design system).</p>
-              </div>
-            </div>
-            <div class="question">
-              <h3>Pregunta 3</h3>
-              <p>Propón un plan inicial de acción para abordar la accesibilidad.</p>
-              <div class="answer">
-                <p>Empezaría con una auditoría rápida para identificar barreras críticas, priorizando flujos esenciales. Después definiría un backlog con severidad/impacto, responsables y fechas. En paralelo, formaría al equipo (diseño, desarrollo, contenidos) y establecería criterios de aceptación accesibles en el proceso de QA, incluyendo pruebas con tecnologías de apoyo.</p>
-              </div>
-            </div>
-            <div class="question">
-              <h3>Pregunta 4</h3>
-              <p>¿Qué roles y responsabilidades deberían existir?</p>
-              <div class="answer">
-                <p>Debería existir un responsable de accesibilidad (liderazgo y gobernanza), product owners que incorporen requisitos en el backlog, diseñadores que aseguren componentes accesibles, desarrolladores que implementen semántica y soporte ARIA cuando proceda, QA con pruebas manuales y automatizadas, y soporte legal/compliance para alinear con normativa. Es clave incluir a usuarios con discapacidad en pruebas.</p>
-              </div>
-            </div>
-            <div class="question">
-              <h3>Pregunta 5</h3>
-              <p>¿Cómo medirías el progreso y la conformidad?</p>
-              <div class="answer">
-                <p>Mediría con KPIs como: porcentaje de páginas/funciones conformes AA, número de incidencias por severidad, cobertura de pruebas (automatizadas y manuales), tiempo de resolución y cumplimiento de criterios en releases. Validaría con auditorías periódicas, muestreos por plantillas, y evidencia de pruebas con lectores de pantalla y teclado.</p>
-              </div>
-            </div>
-            <div class="question">
-              <h3>Pregunta 6</h3>
-              <p>¿Qué acciones tomarías para asegurar la mejora continua?</p>
-              <div class="answer">
-                <p>Integraría accesibilidad en el ciclo de desarrollo ("shift left"), mantendría un design system accesible, revisaría contenido de forma recurrente, y establecería revisiones de accesibilidad antes de publicar. Además, crearía un canal de feedback accesible para usuarios y haría retrospectivas para ajustar procesos, formación y estándares internos.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="reflection">
-        <div class="section-title">
-          <h2>Preguntas de reflexión (1–3)</h2>
-          <p class="hint">Respuestas breves en español</p>
-        </div>
-        <div class="card">
-          <div class="grid">
-            <div class="question">
-              <h3>Reflexión 1</h3>
-              <p>¿Qué es lo más difícil de implementar en accesibilidad y por qué?</p>
-              <div class="answer">
-                <p>Lo más difícil suele ser el cambio cultural y de proceso: pasar de “arreglos puntuales” a una práctica sistemática. Requiere alineación entre equipos, tiempo para formación y disciplina para mantener criterios accesibles en cada entrega, especialmente cuando hay presión por plazos.</p>
-              </div>
-            </div>
-            <div class="question">
-              <h3>Reflexión 2</h3>
-              <p>¿Qué impacto tiene la accesibilidad en la calidad del producto?</p>
-              <div class="answer">
-                <p>Mejora la calidad general: incrementa la claridad del contenido, la robustez técnica y la usabilidad. Reduce incidencias, facilita el mantenimiento, amplía la audiencia y disminuye riesgos legales y reputacionales, generando además una mejor experiencia para todos los usuarios.</p>
-              </div>
-            </div>
-            <div class="question">
-              <h3>Reflexión 3</h3>
-              <p>¿Qué primer paso recomendarías si una organización empieza desde cero?</p>
-              <div class="answer">
-                <p>Definir un compromiso claro (política y responsable), y comenzar por un inventario de activos y una evaluación rápida de los journeys críticos. Con esos datos, crear un plan por fases con prioridades, formación mínima para el equipo y criterios de aceptación accesibles en el flujo de trabajo.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#caso1">Caso 1</a></li>
+        <li><a href="#caso2">Caso 2</a></li>
+        <li><a href="#caso3">Caso 3</a></li>
+      </ul>
     </div>
+  </nav>
+
+  <main>
+    <section id="caso1" class="section">
+      <div class="container">
+        <h2>Caso 1</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>1. Identifique los datos personales recogidos, generados y tratados</h3>
+            <p class="answer">
+              Se recopilan datos identificativos (nombre, apellidos, DNI/NIE/pasaporte), datos de contacto (dirección, email, teléfono),
+              datos de la reserva/estancia (fechas, número de acompañantes, preferencias), datos de pago/facturación (sin almacenar PAN completo si se usa pasarela),
+              y datos generados por el servicio (historial de estancias, consumos, incidencias y comunicaciones con el cliente).
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>2. ¿Qué tipo de datos personales son? ¿Alguna categoría especial?</h3>
+            <p class="answer">
+              Principalmente datos de identificación y contacto, y datos transaccionales/contractuales. En general no son categorías especiales,
+              salvo que se traten datos sensibles por petición del cliente (p. ej., necesidades de accesibilidad o salud, alergias) que podrían encajar
+              como datos de salud si se documentan.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>3. ¿Qué finalidades se describen o se pueden inferir?</h3>
+            <p class="answer">
+              Gestión de reservas y prestación del servicio hotelero; cumplimiento de obligaciones legales (registro de viajeros, facturación);
+              atención al cliente y gestión de incidencias; seguridad y prevención de fraude; y, si existe consentimiento o base válida,
+              comunicaciones comerciales/fidelización.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>4. Identifique la base jurídica para cada finalidad</h3>
+            <p class="answer">
+              Contrato: gestionar reserva/estancia y atención vinculada. Obligación legal: registro de viajeros, obligaciones fiscales/contables.
+              Interés legítimo: seguridad, defensa ante reclamaciones, prevención de fraude (con evaluación de ponderación).
+              Consentimiento: marketing no esencial, newsletter, perfilado no necesario.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>5. Identifique cesiones o accesos por terceros (encargados) y transferencias</h3>
+            <p class="answer">
+              Encargados típicos: PMS/Channel manager, motor de reservas, pasarela de pago, proveedor de email/SMS, soporte TI/hosting.
+              Cesiones: autoridades (p. ej., fuerzas y cuerpos de seguridad por registro de viajeros), entidades bancarias.
+              Transferencias internacionales: si proveedores cloud están fuera del EEE; se requerirían SCC u otra garantía.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>6. Plazos de conservación</h3>
+            <p class="answer">
+              Datos contractuales y facturación: según normativa fiscal/contable (habitualmente 4–6 años). Registro de viajeros: según normativa aplicable.
+              Datos de marketing: hasta retirada del consentimiento u oposición. Logs/incidencias: lo estrictamente necesario para seguridad y defensa de reclamaciones.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>7. Medidas de seguridad recomendables</h3>
+            <p class="answer">
+              Control de accesos por perfiles, MFA, cifrado en tránsito y en reposo, minimización y seudonimización cuando proceda,
+              registro de accesos, copias de seguridad y plan de recuperación, acuerdos con encargados, y procedimientos de notificación de brechas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="caso2" class="section">
+      <div class="container">
+        <h2>Caso 2</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>1. ¿Qué riesgos para los derechos y libertades identifica?</h3>
+            <p class="answer">
+              Riesgos de acceso no autorizado a historiales, perfiles o decisiones automatizadas; discriminación o sesgos; falta de transparencia;
+              uso secundario incompatible; suplantación/robo de identidad si hay brecha; y exclusión/impacto significativo por decisiones automatizadas.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>2. ¿Qué medidas de mitigación aplicaría?</h3>
+            <p class="answer">
+              DPIA si procede, minimización de datos, explicabilidad y revisión humana, pruebas de sesgo y calidad, controles de acceso, auditoría,
+              gobernanza de proveedores, y mecanismos sencillos para ejercer derechos (acceso, oposición, limitación, etc.).
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>3. ¿Qué obligaciones de información/transparencia son clave?</h3>
+            <p class="answer">
+              Informar de finalidades, base jurídica, destinatarios, conservación, derechos y, si hay decisiones automatizadas, lógica general,
+              importancia y consecuencias previstas, así como el derecho a intervención humana.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="caso3" class="section">
+      <div class="container">
+        <h2>Caso 3</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>1. ¿Qué haría ante una brecha de seguridad?</h3>
+            <p class="answer">
+              Contener y evaluar el incidente, registrar evidencias, determinar alcance y riesgos, y notificar a la AEPD en 72 horas si aplica.
+              Si el riesgo es alto, comunicar a los afectados sin dilación, y ejecutar acciones correctivas.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>2. ¿Qué documentación debe conservarse?</h3>
+            <p class="answer">
+              Registro interno de la brecha: hechos, efectos, categorías y volumen de datos, medidas adoptadas y decisiones de notificación.
+              También comunicaciones con encargados, evidencias técnicas y lecciones aprendidas.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>3. ¿Qué mejoras preventivas aplicaría?</h3>
+            <p class="answer">
+              Hardening y parchado, segmentación, monitorización y alertas, formación, simulacros, revisión de permisos,
+              pruebas de restauración de backups y evaluación periódica de riesgos.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      <p>Documento actualizado para incluir respuestas y eliminar la sección de indicaciones para el alumnado.</p>
+    <div class="container">
+      <p>&copy; 2026 Caso Práctico IAAP</p>
     </div>
   </footer>
 </body>
